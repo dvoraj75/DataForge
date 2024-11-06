@@ -1,0 +1,50 @@
+[project]
+name = "data-forge"
+version = "1.0.0"
+description = "Simple service for collecting data from SQL databases and automatized creating reports in PDF, CSV, HTML, ..."
+urls = {source = "https://github.com/dvoraj75/DataForge"}
+authors = [
+    {name = "Jan Dvořák", email = "dvoraj75@gmail.com"}
+]
+license = "MIT"
+dependencies = [
+
+]
+readme = "README.md"
+
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+preview = true
+select = [
+    "F",
+    "FAST",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "S",
+    "B",
+    "A",
+    "T20",
+    "ERA",
+    "PL",
+    "RUF"
+]
+extend-ignore = [
+    "RUF012"
+]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy", "mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "app_settings.settings"
