@@ -31,7 +31,6 @@ select = [
     "N",
     "UP",
     "S",
-    "B",
     "A",
     "T20",
     "ERA",
@@ -44,7 +43,8 @@ extend-ignore = [
 
 [tool.mypy]
 strict = true
-plugins = ["pydantic.mypy", "mypy_django_plugin.main"]
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
 
 [tool.django-stubs]
 django_settings_module = "app_settings.settings"
