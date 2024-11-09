@@ -4,3 +4,7 @@ class InvalidConfigurationError(Exception):
 
 class InvalidJobConfigurationError(InvalidConfigurationError):
     pass
+
+
+class JobDoesNotExistError(Exception):
+    pass

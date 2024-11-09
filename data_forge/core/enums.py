@@ -1,7 +1,7 @@
 from enum import StrEnum
 
 
-class JobType(StrEnum):
+class JobTriggerType(StrEnum):
     INTERVAL = "interval"
     CRON = "cron"
     DATE = "date"

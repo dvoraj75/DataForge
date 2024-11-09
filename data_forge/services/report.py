@@ -1,3 +1,3 @@
 class ReportService:
-    async def create_reports(self, report_configs):
+    async def create_reports(self, reports):
         pass

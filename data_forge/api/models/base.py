@@ -12,3 +12,7 @@ class BaseGetResponseModel(BaseResponseModel):
 
 class BasePostResponseModel(BaseResponseModel):
     code: int = Field(description="HTTP Response code", default=status.HTTP_201_CREATED)
+
+
+class BaseDeleteNoContentResponseModel(BaseResponseModel):
+    code: int = Field(description="HTTP Response code", default=status.HTTP_204_NO_CONTENT)

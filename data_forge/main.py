@@ -3,8 +3,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from data_forge.api import v1_router
-from data_forge.api.handlers import invalid_job_configration_exception_handler
-from data_forge.core.exceptions import InvalidJobConfigurationError
+from data_forge.api.handlers import invalid_configration_exception_handler, job_does_not_exist_error_handler
+from data_forge.core.exceptions import InvalidJobConfigurationError, JobDoesNotExistError
 from data_forge.core.scheduler import DataForgeScheduler
 
 
@@ -16,7 +16,8 @@ async def life_span(app: FastAPI) -> None:  # noqa: RUF029
 
 
 def init_handlers(app: FastAPI) -> None:
-    app.add_exception_handler(InvalidJobConfigurationError, invalid_job_configration_exception_handler)
+    app.add_exception_handler(InvalidJobConfigurationError, invalid_configration_exception_handler)
+    app.add_exception_handler(JobDoesNotExistError, job_does_not_exist_error_handler)
 
 
 def create_app() -> FastAPI:

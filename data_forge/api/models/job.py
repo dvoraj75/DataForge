@@ -2,8 +2,8 @@ from data_forge.api.models.base import BaseGetResponseModel
 from data_forge.core.models import Job
 
 
-class JobGetResponse(Job, BaseGetResponseModel):
-    pass
+class JobGetResponse(BaseGetResponseModel):
+    job: Job
 
 
 class JobGetListResponse(BaseGetResponseModel):
