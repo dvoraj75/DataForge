@@ -228,5 +228,7 @@ class Job(BaseModel):
             case _:
                 logger.error("Unknonw job type '%s'", self.job_trigger_type)
                 raise InvalidJobConfigurationError(f"Unknown job type: {self.job_trigger_type}")
-        logger.error("Invalid configuration type '%s' for job type '%s'", type(self.job_trigger_config), self.job_trigger_type)
+        logger.error(
+            "Invalid configuration type '%s' for job type '%s'", type(self.job_trigger_config), self.job_trigger_type
+        )
         raise InvalidJobConfigurationError(f"Invalid configuration type for job '{self.job_trigger_type}'")
