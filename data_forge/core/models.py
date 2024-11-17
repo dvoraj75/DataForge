@@ -143,14 +143,14 @@ class Source(BaseModel):
     operations: list[Operation] = Field(default_factory=list)
 
 
-class Table(BaseModel):
+class TableConfig(BaseModel):
     name: str = Field("")
     source: Source
 
 
 class Report(BaseModel):
     name: str = Field("")
-    tables: list[Table]
+    tables: list[TableConfig]
     outputs: list[Output]
 
 

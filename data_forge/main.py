@@ -3,8 +3,8 @@ import logging
 from contextlib import asynccontextmanager
 from typing import Optional
 
-from fastapi import FastAPI
 import sentry_sdk
+from fastapi import FastAPI
 from sentry_sdk.integrations.asyncio import AsyncioIntegration
 
 from data_forge.api import v1_router
@@ -48,7 +48,9 @@ def init_sentry(settings: SentrySettings) -> None:
         environment=settings.environment,
         traces_sample_rate=0.2,
         profiles_sample_rate=0.2,
-        integrations=[AsyncioIntegration(),],
+        integrations=[
+            AsyncioIntegration(),
+        ],
     )
 
 

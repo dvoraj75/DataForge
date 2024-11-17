@@ -3,7 +3,7 @@ from typing import Type
 from pydantic_core import ValidationError
 from pydantic_settings import BaseSettings
 
-from data_forge.settings import AppSettings, PostgresDbSettings, LoggingSettings, SentrySettings
+from data_forge.settings import AppSettings, LoggingSettings, PostgresDbSettings, SentrySettings
 
 
 def get_app_settings() -> AppSettings:
